@@ -1,0 +1,210 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header pl-5 pr-5 pb-5">
+      <div class="container flex w-100 justify-center">
+        <div class="appNameWrapper p-2 w-2/3">
+          <h1 class="text-5xl text-white">Crypto.IO</h1>
+          <br />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ipsum
+            dolor, bibendum sed lacus sed, gravida sagittis lacus. Aliquam eget
+            orci pellentesque, imperdiet sapien quis, tincidunt leo. Praesent
+            nec tempus nibh, at sollicitudin nisl.
+          </p>
+        </div>
+        <div class="encryptionImageWrapper w-1/5 p-2 bg-white right-0">
+          <img src="./assets/img//logo.jpeg" alt="Logo" />
+        </div>
+      </div>
+
+      <div class="headerFooter mt-36 text-2xl flex-col items-center flex">
+        <p class="text-white">Scroll Down</p>
+        <ion-icon name="chevron-down-outline" class="text-white"></ion-icon>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="mt-10 mb-10">
+      <div class="container m-auto">
+        <div class="grid grid-cols-2 gap-4">
+          <!-- Encrypt Button -->
+          <div class="border-4 border-theme p-5 flex flex-col">
+            <h3 class="text-theme text-2xl">Encrypt</h3>
+            <span>Some Text Here</span>
+            <div class="flex justify-end w-100">
+              <button
+                id="encryptBtn"
+                class="flex text-xl bg-theme-contrast px-5 text-white py-1 rounded-full"
+              >
+                Start
+              </button>
+            </div>
+          </div>
+
+          <!-- Decrypt Button -->
+          <div class="border-4 border-theme p-5 flex flex-col">
+            <h3 class="text-theme text-2xl">Decrypt</h3>
+            <span>Some Text Here</span>
+            <div class="flex justify-end w-100">
+              <button
+                id="decryptBtn"
+                class="flex text-xl bg-theme-contrast px-5 text-white py-1 rounded-full"
+              >
+                Start
+              </button>
+            </div>
+          </div>
+
+          <!-- Compress Button -->
+          <div class="border-4 border-theme p-5 flex flex-col">
+            <h3 class="text-theme text-2xl">Compress</h3>
+            <span>Some Text Here</span>
+            <div class="flex justify-end w-100">
+              <button
+                id="compressBtn"
+                class="flex text-xl bg-theme-contrast px-5 text-white py-1 rounded-full"
+              >
+                Start
+              </button>
+            </div>
+          </div>
+
+          <!-- Decompress Button -->
+          <div class="border-4 border-theme p-5 flex flex-col">
+            <h3 class="text-theme text-2xl">Decompress</h3>
+            <span>Some Text Here</span>
+            <div class="flex justify-end w-100">
+              <button
+                id="decompressBtn"
+                class="flex text-xl bg-theme-contrast px-5 py-1 text-white rounded-full"
+              >
+                Start
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+
+    <div class="bg-theme-contrast">
+      <div class="container m-auto py-10">
+        <div class="flex flex-col">
+          <div class="flex justify-evenly">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <button class="text-theme">About</button>
+            <button class="text-theme">Creators</button>
+            <button class="text-theme">Contact us</button>
+          </div>
+        </div>
+        <div class="text-white">
+          <p>&copy; Crypto.IO 2021</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modalWrapper" hidden>
+      <div
+        class="backdrop fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-75"
+      ></div>
+
+      <div class="modal fixed top-5 left-5 right-5 bottom-5 bg-white p-5">
+        <div class="top right-9 top-9 fixed">
+          <ion-icon
+            name="close-outline"
+            size="large"
+            id="modalCloseBtn"
+          ></ion-icon>
+        </div>
+        <div class="flex h-full">
+          <div
+            class="w-1/4 max-w-xs hidden py-2 mr-3 border-r-2 border-gray-200 h-full modalSteps md:flex md:flex-col"
+            id="modalSteps"
+          ></div>
+          <div class="flex-1 py-2 flex-col flex mx-5">
+            <div class="modalHeaderWrapper">
+              <h3 class="text-3xl font-bold" id="modalHeader">Decompress</h3>
+            </div>
+            <!-- body of the modal -->
+            <div class="flex flex-1 justify-center items-center">
+              <div
+                class="flex flex-1 justify-center items-center"
+                id="modalBody"
+              ></div>
+              <div class="hidden flex" id="progressBarWrapper">
+                <svg
+                  x="0px"
+                  y="0px"
+                  width="500px"
+                  height="500px"
+                  viewBox="0 0 500 500"
+                >
+                  <circle
+                    stroke="#d1d1d1"
+                    fill="none"
+                    stroke-width="4"
+                    cx="250"
+                    cy="250"
+                    r="240"
+                  />
+                  <circle
+                    id="progressBar"
+                    stroke="#116466"
+                    fill="none"
+                    stroke-width="4"
+                    cx="250"
+                    cy="250"
+                    r="240"
+                    stroke-dasharray="0"
+                  />
+                </svg>
+                <span class="absolute text-6xl font-thin" id="percent">0%</span>
+              </div>
+            </div>
+            <div hidden id="continueBtnWrapper">
+              <button
+                class="bg-theme-contrast px-10 py-2 text-white float-right rounded-xl"
+                id="continueBtn"
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script
+      type="text/javascript"
+      src="https://rawgit.com/nodeca/pako/master/dist/pako.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web-streams-polyfill@2.0.2/dist/ponyfill.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/streamsaver@2.0.3/StreamSaver.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="./js/file.js"></script>
+    <script src="./js/inflate.js"></script>
+    <script src="./js/crypt.js"></script>
+    <script src="./js/elements.js"></script>
+    <script src="./js/progress.js"></script>
+    <script src="./js/modal.js"></script>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #d9b08c;
+}
+
+.appNameWrapper {
+  background-color: #d1e8e2;
+}
+
+.border-theme {
+  border-color: #d9b08c;
+}
+
+.text-theme {
+  color: #d9b08c;
+}
+
+.bg-theme {
+  background-color: #d9b08c;
+}
+
+.bg-theme-contrast {
+  background-color: #116466;
+}
+
+.text-theme-contrast {
+  color: #116466;
+}
+
+.border-theme-contrast {
+  border-color: #116466;
+}
+
+.step-unread {
+  color: #aaa;
+  transition-duration: 0.5s;
+}
+
+.step-read {
+  color: #116466;
+  transition-duration: 0.5s;
+}
+
+.file-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-input-label {
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 0.5rem;
+  background-color: #116466;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+}
+
+.text-input {
+  padding: 10px 15px;
+  border: 1px solid #aaa;
+  border-radius: 7px;
+  width: 65%;
+}
+
+/* Reset Select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #116466;
+  background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  background: #116466;
+  overflow: hidden;
+  border-radius: 0.25em;
+  color: #fff;
+  padding: 5px 12px;
+}
+select {
+  flex: 1;
+  padding: 0 0.5em;
+  color: #fff;
+  cursor: pointer;
+}
+
+#progressBarWrapper {
+  width: 20rem;
+  height: 20rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.65rem;
+  box-sizing: border-box;
+}
+#progressBarWrapper svg {
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+}
+
+#progressBar {
+  stroke-dashoffset: 0;
+  transition-duration: 0.5s;
+}
+
+body {
+  font-family: Asap;
+  font-size: 16px;
+  background: white;
+  position: relative;
+
+  min-height: 100vh;
+}
