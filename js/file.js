@@ -67,3 +67,13 @@ function getFileName(string, ext, defaultName) {
 
   return filename;
 }
+
+function download(filename, data) {
+  const a = document.createElement("a");
+  const url = window.URL.createObjectURL(data);
+  a.href = url;
+  a.download = filename;
+  a.click();
+  a.remove();
+  window.URL.revokeObjectURL(url);
+}

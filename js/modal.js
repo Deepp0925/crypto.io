@@ -93,6 +93,9 @@ function showCompressionModal(type) {
         else inflate(replies[0], updateProgress, nextStep);
       } else {
         // TODO call LZ77 functions here
+        if (type === "Compress")
+          lz77Compress(replies[0], updateProgress, nextStep);
+        else lz77Decompress(replies[0], updateProgress, nextStep);
       }
     } else canCloseModal = true;
 
@@ -172,7 +175,7 @@ function showEncryptionModal(type) {
     },
     {
       step: "Select algorithm",
-      element: createSelectElem(["AES", "DES", "MD5"]),
+      element: createSelectElem(["AES", "DES", "Rabbit"]),
       isInput: true,
     },
     {
@@ -239,7 +242,6 @@ function showEncryptionModal(type) {
     if (nextStepInfo.isProgress) {
       canCloseModal = false;
       updateProgress(0);
-      // TODO call the correct function based on the input
       // AES
       if (replies[1] === "AES") {
         if (type === "Encrypt")
@@ -248,13 +250,15 @@ function showEncryptionModal(type) {
       }
       // DES
       else if (replies[1] === "DES") {
-        if (type === "Encrypt") deflate(replies[0], updateProgress, nextStep);
-        else inflate(replies[0], updateProgress, nextStep);
+        if (type === "Encrypt")
+          encryptDES(replies[0], replies[2], updateProgress, nextStep);
+        else decryptDES(replies[0], replies[2], updateProgress, nextStep);
       }
-      // MD5
+      // Rabbit
       else {
-        if (type === "Encrypt") deflate(replies[0], updateProgress, nextStep);
-        else inflate(replies[0], updateProgress, nextStep);
+        if (type === "Encrypt")
+          encryptRabbit(replies[0], replies[2], updateProgress, nextStep);
+        else decryptRabbit(replies[0], replies[2], updateProgress, nextStep);
       }
     } else canCloseModal = true;
 
