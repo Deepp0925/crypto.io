@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>About</title>
+  </head>
+  <body class="h-full flex flex-col">
+    <!-- Navbar -->
+    <div class="navBar bg-theme py-4 px-8">
+      <div id="appName" class="flex flex-1 items-center">
+        <h3 class="text-white text-4xl flex-1">Crypto.IO</h3>
+        <div id="homeLink">
+          <a href="./index.html" class="text-2xl text-white">Home</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Body -->
+
+    <div class="flex-1 m-auto py-6 px-8 w-full">
+      <h4 class="font-bold text-2xl">About</h4>
+      <p>
+        User will be able to upload a file and receive an encrypted form of the
+        same file Our encryption algorithms will include AES, Rabbit, and DES.
+        These encryptions are some of the strongest encryptions there are. AES,
+        Advanced Encryption Standard, is a symmetric block cipher. It is used
+        throughout the world to encrypt sensitive data. DES also know as Data
+        Encryption Standard. It is a symmetric-key algorithm, that encrypts
+        groups of 64 bits. Each encryption has their own corresponding
+        decryption algorithm.
+        <br /><br />
+        In addition to encryption, the web application also provides
+        compression/decompression with LZ77 and DEFLATE. LZ77 is a lossless data
+        compresssion algorithm. It works by groupoing symbols into strings, and
+        then converting the strings into code. DEFLATE is another lossess data
+        compression algorithm. This compression works by finding sequences of
+        data that repeat and encode each sequence with a pair of numbers. Just
+        like the encryption, with each compression, there is a also a
+        decompresss for LZ77 and DEFLATE. This will allow users to safely send
+        files over the internet.
+      </p>
+    </div>
+
+    <!-- Footer -->
+
+    <div class="bg-theme-contrast">
+      <div class="container m-auto py-10">
+        <div class="flex flex-col">
+          <div class="flex justify-evenly">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <a href="./about.html" class="text-theme">About</a>
+            <a href="./creators.html" class="text-theme">Creators</a>
+            <a href="./contact_us.html" class="text-theme">Contact us</a>
+          </div>
+        </div>
+        <div class="text-white">
+          <p>&copy; Crypto.IO 2021</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
