@@ -1,8 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Asap:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
 }
 
 .header {
@@ -128,7 +130,6 @@ select {
 }
 
 body {
-  font-family: Asap;
   font-size: 16px;
   background: white;
   position: relative;
